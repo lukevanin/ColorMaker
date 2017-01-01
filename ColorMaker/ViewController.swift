@@ -120,6 +120,8 @@ class ViewController: UIViewController {
     }
     
     private func makeFadedColor(from color: UIColor) -> UIColor {
+        
+        let base = CGFloat(0.25)
         let delta = CGFloat(0.25)
         var r : CGFloat = 0
         var g : CGFloat = 0
@@ -130,9 +132,9 @@ class ViewController: UIViewController {
         }
         
         return UIColor(
-            red: r * delta,
-            green: g * delta,
-            blue: b * delta,
+            red: base + (r * delta),
+            green: base + (g * delta),
+            blue: base + (b * delta),
             alpha: 1.0
         )
     }
